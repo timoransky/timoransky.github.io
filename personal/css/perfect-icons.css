@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'si';
+    src: url('./perfect-icons/socicon.eot');
+    src: url('./perfect-icons/socicon.eot?#iefix') format('embedded-opentype'),
+         url('./perfect-icons/socicon.woff') format('woff'),
+         url('./perfect-icons/socicon.ttf') format('truetype'),
+         url('./perfect-icons/socicon.svg#icomoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: si;
+        src: url(./perfect-icons/socicon.svg) format(svg);
+    }
+}
+
+.soc {
+    overflow:hidden;
+    margin:0; padding:0;
+    list-style:none;
+}
+
+.soc li {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+
+.soc li a {
+    font-family:si!important;
+    font-style:normal;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+
+    -o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin-right: 10px;
+    color: #444;
+    background-color: #ffffff;
+    transition: all 0.25s ease-in-out;
+}
+
+.soc a:hover {
+    z-index: 2;
+    color: #49c8ff;
+    /*
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    */
+}
+
+.soc-icon-last{
+    margin:0 !important;
+}
+
+.soc-twitter:before {
+    content:'\e040';
+}
+
+.soc-google:before {
+    content:'\e067';
+}
+
+.soc-github:before {
+    content:'\e030';
+}
+
+.soc-facebook:before {
+    content:'\e041';
+}                  
