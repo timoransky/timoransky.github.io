@@ -149,3 +149,9 @@ nav > ul > li > a:hover {
     	height: auto;
 	}
 }
+
+@media screen and (max-width: 400px){
+	.text h1{
+	    letter-spacing: 0.1em;
+	}
+}
