@@ -54,6 +54,10 @@ body, input, select, textarea{
 	margin-left: 40%;
 }
 
+.text {
+	padding: 20px;
+}
+
 .text header{
 	margin: 3em 0;
 }
@@ -83,6 +87,7 @@ body, input, select, textarea{
 	max-width: 300px;
 	font-size: 0.9em;
     letter-spacing: 0.25em;
+    margin: auto;
 }
 
 .br {
