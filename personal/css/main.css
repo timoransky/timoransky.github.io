@@ -386,6 +386,9 @@ form label {
 	    max-height: none;
 	    padding: 0;
 	}
+	.work-element {
+		width: 100%;
+	}
     #index,
 	#about,
 	#work,
