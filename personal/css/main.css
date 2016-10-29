@@ -12,6 +12,7 @@ body {
 	min-height: 100vh;
 	background-color: #f4f4f4;
 	padding: 20px;
+	overflow: hidden;
 }
 
 body, input, select, textarea{
@@ -35,10 +36,12 @@ body, input, select, textarea{
 	overflow: hidden;
 	box-shadow: 0 3px 5px 0 rgba(0,0,0,.05);
 	min-width: 760px;
+	position: relative;
 }
 
-.container > div {
-	height: 600px;
+.left, .right {
+	height: 100%;
+	max-height: 600px;
 	width: 50%;
 	text-align: center;
 	display: flex;
@@ -48,21 +51,22 @@ body, input, select, textarea{
 	overflow: hidden;
 }
 
-.image > img{
+.left > img{
 	height: 100%;
 	width: auto;
 	margin-left: 40%;
 }
 
-.text {
+.right {
 	padding: 20px;
+	position: relative;
+	height: 600px;
 }
 
-.text header{
-	margin: 3em 0;
+.right header{
 }
 
-.text h1{
+.right h1{
 	color: #555;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
@@ -72,19 +76,23 @@ body, input, select, textarea{
     letter-spacing: 0.25em;
 }
 
-.text h1::after {
+.right h1::after {
 	content: '';
     display: block;
     background-color: #cccccc;
     height: 1px;
     margin: 1.5rem 0 1.75rem 0;
-    width: 5rem;
+    width: 0rem;
     margin-left: auto;
     margin-right: auto;
+    transition: all 1s ease-in-out;
 }
 
-.text p {
-	max-width: 300px;
+.right h1.border-bottom::after{
+	width: 5rem;
+}
+
+.right p {
 	font-size: 0.9em;
     letter-spacing: 0.25em;
     margin: auto;
@@ -96,6 +104,10 @@ body, input, select, textarea{
 	width: 100px;
 }
 
+.nav{
+	margin-top: 3em;
+}
+
 ul {
 	list-style: none;
 }
@@ -104,7 +116,11 @@ nav > ul > li {
 	margin-bottom: 1.7em;
 }
 
-nav > ul > li > a{
+nav > ul > li > button, .go-back-button{
+	border:  none;
+	outline:  none;
+	background: transparent;
+	cursor: pointer;
 	text-decoration: none;
 	display: inline-block;
 	color: grey;
@@ -119,13 +135,60 @@ nav > ul > li > a{
     border-radius: 8px;
 	text-transform: uppercase;
 	box-shadow: inset 0 0 0 1px #cccccc;
-    color: #555
+    color: #555555
 }
 
-nav > ul > li > a:hover {
+.text{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.text > *{
+	transition: all 0.5s ease-in-out;
+}
+
+.text > header {
+	position: relative;
+	top: calc(50% - 101px);
+	transition: all 1s ease-in-out;
+	
+}
+
+#index, #about, #work, #contact {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 40px 60px;
+}
+
+#about, #work, #contact {
+	display: none;
+}
+
+.text-left {
+	text-align: left;
+}
+
+nav > ul > li > button:hover, .go-back-button:hover {
 	border-color: pink;
 	box-shadow: inset 0 0 0 1px #49c8ff;
     color: #49c8ff;
+}
+
+.go-back-button {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	border-radius: 5px;
+	right: 20px;
+	top: 20px;    
+	min-width: 0;
+    padding: 0;
+
 }
 
 @media screen and (max-width: 800px){
@@ -138,12 +201,12 @@ nav > ul > li > a:hover {
 		width: 100%;
 	}
 
-	.container > div.image {
+	.container > div.left {
 		max-height: 300px;
 		height: auto;
 	}
 
-	.image img {
+	.left img {
 		margin: 0;
 		width: 100%;
     	height: auto;
@@ -151,7 +214,7 @@ nav > ul > li > a:hover {
 }
 
 @media screen and (max-width: 400px){
-	.text h1{
+	.right h1{
 	    letter-spacing: 0.1em;
 	}
 }

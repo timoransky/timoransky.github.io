@@ -1,37 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Some test personal page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700,900&amp;subset=latin-ext" rel="stylesheet">
-	<link rel="stylesheet" href="./css/main.css">
-	<link rel="stylesheet" href="./css/perfect-icons.css">
+    <meta charset="UTF-8">
+    <title>Some test personal page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/perfect-icons.css">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/main.js"></script>
 </head>
+
 <body>
-	<div class="container">
-		<div class="image">
-			<img src="./img/01.jpg" alt="">
-		</div>
-		<div class="text">
-			<header>
-				<h1>Jane Dow</h1>
-				<p>Lorem ipsum dolor sit amet.</p>	
-			</header>
-			<nav>
-				<ul>
-					<li><a href="">about</a></li>
-					<li><a href="">work</a></li>
-					<li><a href="">contact</a></li>
-				</ul>
-			</nav>
-			<ul class="soc">
-			    <li><a class="soc-twitter" href="#"></a></li>
-			    <li><a class="soc-google" href="#"></a></li>
-			    <li><a class="soc-github" href="#"></a></li>
-			    <li><a class="soc-facebook soc-icon-last" href="#"></a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="container">
+        <div class="left">
+            <img src="./img/01.jpg" alt="">
+        </div>
+        <div class="right">
+            <div id="index" class="text">
+                <header>
+                    <h1>Jane Dow</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </header>
+                <nav class="nav">
+                    <ul>
+                        <li><button id="show-about">about</button></li>
+                        <li><button id="show-work">work</button></li>
+                        <li><button id="show-contact">contact</button></li>
+                    </ul>
+                </nav>
+                <ul class="soc">
+                    <li>
+                        <a class="soc-twitter" href="#"></a>
+                    </li>
+                    <li>
+                        <a class="soc-google" href="#"></a>
+                    </li>
+                    <li>
+                        <a class="soc-github" href="#"></a>
+                    </li>
+                    <li>
+                        <a class="soc-facebook soc-icon-last" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="about" class="text">
+            	<button class="go-back-button"></button>
+            	<header>
+                    <h1>About</h1>
+                </header>
+            	<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem fugit molestiae quos dicta amet nihil veniam iusto quae tenetur ullam quasi, et vero, minus harum, praesentium dolores suscipit illum eveniet.</p> 
+            	<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tenetur repellendus beatae asperiores sunt totam ipsa libero dolores, consequatur, ex tempore, atque ea recusandae maxime, expedita sapiente. Atque, ex, eos.</p>
+            </div>
+            <div id="work" class="text">
+            	<button class="go-back-button"></button>
+            	<header>
+                    <h1>Work</h1>
+                </header>
+                
+            	
+            </div>
+            <div id="contact" class="text">
+            	<button class="go-back-button"></button>
+            	<header>
+                    <h1>Contact</h1>
+                </header>
+            	
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
