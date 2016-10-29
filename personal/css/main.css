@@ -283,6 +283,8 @@ form textarea {
     box-shadow: inset 0 0 0 1px #cccccc;
     color: #555555;
     margin-bottom: 2em;
+    max-width: 25em;
+    width: 100%;
 }
 
 textarea {
@@ -363,6 +365,10 @@ form label {
 @media screen and (max-width: 800px) {
     body {
         overflow: scroll;
+    }
+    .go-back-button{
+    	right: 0px;
+    	top: 10px;	
     }
     .container {
         flex-direction: column;
