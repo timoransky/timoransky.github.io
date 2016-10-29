@@ -18,6 +18,7 @@ $(function() {
         }, 1000); 
 
         $("#" + pageToAnimate + " .close").addClass("grow");
+
         setTimeout(function(){
 	    	$("#" + pageToAnimate + " .close").addClass("rotate");
         }, 500);   
@@ -25,7 +26,6 @@ $(function() {
 
 	function animatePageOut(pageToAnimate) {
 		$("#" + pageToAnimate + " h1").removeClass("border-bottom");
-
         $("#" + pageToAnimate + " .close").removeClass("rotate");
 
         setTimeout(function(){
@@ -66,7 +66,7 @@ $(function() {
         
         setTimeout(function(){
 	    	animatePageIn(event.target.innerHTML);
-        }, 1200);
+        }, 1000);
         
     });
 
