@@ -220,14 +220,20 @@ nav > ul > li > button:hover,
     content: '';
     position: absolute;
     height: 2px;
-    width: 100%;
+    width: 0px;
     top: 50%;
     left: 0;
     margin-top: -1px;
     background: #999999;
+    transition: all 1s ease-in-out;
 }
 
-.close::before {
+.close.grow::before,
+.close.grow::after {
+    width: 100%;
+}
+
+.close.rotate::before {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -235,20 +241,12 @@ nav > ul > li > button:hover,
     transform: rotate(45deg);
 }
 
-.close::after {
+.close.rotate::after {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
-}
-
-.close.big {
-    -webkit-transform: scale(3);
-    -moz-transform: scale(3);
-    -ms-transform: scale(3);
-    -o-transform: scale(3);
-    transform: scale(3);
 }
 
 .close.hairline::before,

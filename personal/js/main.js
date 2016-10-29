@@ -3,7 +3,6 @@ $(function() {
 	function animatePageIn(pageToAnimate) {
 		$("#"+pageToAnimate).css("display", "flex");
 		$("#"+pageToAnimate+" > *").css("display", "initial");
-	    
 
     	setTimeout(function(){
 	    	$("#"+pageToAnimate+" > header").css("visibility", "visible");
@@ -16,7 +15,12 @@ $(function() {
 	    	$("#"+pageToAnimate+" > *").css("visibility", "visible");
 	    	$("#"+pageToAnimate+" > *").css("opacity", "1");
     		$("#"+pageToAnimate+" h1").addClass("border-bottom");
-        }, 1000);    
+        }, 1000); 
+
+        $("#"+pageToAnimate+" .close").addClass("grow");
+        setTimeout(function(){
+	    	$("#"+pageToAnimate+" .close").addClass("rotate");
+        }, 1000);   
 	}
 
 	$("#index > *, #about > *, #work > *, #contact > *").css("opacity", "0");
@@ -25,16 +29,13 @@ $(function() {
 
 	$("#index > *").css("opacity", "0");
     $("#index").css("visibility", "hidden");
-    //$("#"+pageToAnimate+" header").css("display", "block");
 
     setTimeout(function(){
     	animatePageIn('index');
     }, 500);
 
 	$("#show-about, #show-work, #show-contact").click(function(event) {
-        console.log('clicked show-' + event.target.innerHTML);
-
-        $("#index h1").removeClass("border-bottom");
+		$("#index h1").removeClass("border-bottom");
 
         setTimeout(function(){
         	$("#index > header").css("top", "calc(50% - 101px)");
@@ -42,8 +43,6 @@ $(function() {
 	        $("#index").css("visibility", "hidden");	
         }, 500);
         
-        //$("#"+pageToAnimate+" header").css("display", "block");
-
         setTimeout(function(){
 	    	animatePageIn(event.target.innerHTML);
         }, 1200);
@@ -51,20 +50,22 @@ $(function() {
     });
 
     $(".go-back-button").click(function(event) {
-        console.log('clicked show-' + event.target.innerHTML);
-        console.log(event.target.parentElement.id);
-        
-        $("#index h1, #about h1, #work h1, #contact h1").removeClass("border-bottom");
+    	$("#" + event.target.parentElement.id + " h1").removeClass("border-bottom");
+
+        $("#" + event.target.parentElement.id + " .close").removeClass("rotate");
+        setTimeout(function(){
+	    	$("#" + event.target.parentElement.id + " .close").removeClass("grow");
+        }, 1000); 
 
         setTimeout(function(){
-        	$("#index > header, #about > header, #work > header, #contact > header").css("top", "calc(50% - 101px)");
-		    $("#about > *, #work > *, #contact > *").css("opacity", "0");
-		    $("#about > *, #work > *, #contact > *").css("visibility", "hidden");	
+        	$("#" + event.target.parentElement.id + " > header").css("top", "calc(50% - 101px)");
+		    $("#" + event.target.parentElement.id + " > *").css("opacity", "0");
+		    $("#" + event.target.parentElement.id + " > *").css("visibility", "hidden");	
         }, 500);
         
         setTimeout(function(){
-        	$("#about, #work, #contact").css("display", "none");
-	    	animatePageIn('index');
+        	$("#" + event.target.parentElement.id).css("display", "none");
+	    	animatePageIn("index");
         }, 1200);
     });
 
