@@ -384,6 +384,7 @@ form label {
 	#work,
 	#contact {
 	    padding: 1.5em;
+	    height: auto;
 	}
     .left img {
         margin: 0;
