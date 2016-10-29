@@ -64,7 +64,6 @@ textarea {
 .right {
     padding: 20px;
     position: relative;
-    height: 600px;
 }
 
 .right header {}
@@ -156,19 +155,22 @@ nav > ul > li > button,
 
 .text > header {
     position: relative;
-    top: calc(50% - 101px);
+    transform: translateY(calc(50vh - 101px));
     transition: all 0.75s ease-in-out;
+}
+
+.text > header.animate {
+    transform: translateY(0);
 }
 
 #index,
 #about,
 #work,
 #contact {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     padding: 3em;
 }
 
@@ -369,6 +371,16 @@ form label {
         max-height: 300px;
         height: auto;
     }
+    .left,
+	.right {
+	    max-height: none;
+	}
+    #index,
+	#about,
+	#work,
+	#contact {
+	    padding: 1.5em;
+	}
     .left img {
         margin: 0;
         width: 100%;
