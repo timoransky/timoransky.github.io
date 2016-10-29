@@ -15,7 +15,7 @@ $(function() {
 	    	$("#" + pageToAnimate + " > *").css("visibility", "visible");
 	    	$("#" + pageToAnimate + " > *").css("opacity", "1");
     		$("#" + pageToAnimate + " h1").addClass("border-bottom");
-        }, 1000); 
+        }, 750); 
 
         $("#" + pageToAnimate + " .close").addClass("grow");
 
@@ -30,7 +30,7 @@ $(function() {
 
         setTimeout(function(){
 	    	$("#" + pageToAnimate + " .close").removeClass("grow");
-        }, 1000); 
+        }, 250); 
 
         setTimeout(function(){
         	$("#" + pageToAnimate + " > header").css("top", "calc(50% - 101px)");
@@ -41,7 +41,7 @@ $(function() {
         setTimeout(function(){
         	$("#" + pageToAnimate).css("display", "none");
 	    	animatePageIn("index");
-        }, 1200);	
+        }, 1000);	
 	}
 
 	$("#index > *, #about > *, #work > *, #contact > *").css("opacity", "0");
