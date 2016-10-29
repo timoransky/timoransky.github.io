@@ -88,7 +88,7 @@ textarea {
     width: 0rem;
     margin-left: auto;
     margin-right: auto;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .right h1.border-bottom::after {
@@ -225,7 +225,7 @@ nav > ul > li > button:hover,
     left: 0;
     margin-top: -1px;
     background: #999999;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .close.grow::before,
