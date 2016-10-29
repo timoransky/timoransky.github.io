@@ -367,7 +367,7 @@ form label {
         overflow: scroll;
     }
     .go-back-button{
-    	right: 0px;
+    	right: 10px;
     	top: 10px;	
     }
     .container {
