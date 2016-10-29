@@ -384,6 +384,7 @@ form label {
     .left,
 	.right {
 	    max-height: none;
+	    padding: 0;
 	}
     #index,
 	#about,
