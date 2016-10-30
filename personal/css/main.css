@@ -87,7 +87,7 @@ textarea {
     width: 0rem;
     margin-left: auto;
     margin-right: auto;
-    transition: all 0.5s ease-in-out;
+    transition: all 2.5s cubic-bezier(0.15, 0.01, 0, 1.01);
 }
 
 .right h1.border-bottom::after {

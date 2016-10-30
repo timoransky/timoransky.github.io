@@ -7,7 +7,6 @@ $(function() {
     	setTimeout(function(){
 	    	$("#" + pageToAnimate + " > header").css("visibility", "visible");
     		$("#" + pageToAnimate + " > header").css("opacity", "1");
-    		//$("#" + pageToAnimate + " > header").css("top", "0");
     		$("#" + pageToAnimate + " > header").addClass("animate");
         }, 250);
 
@@ -33,7 +32,6 @@ $(function() {
         }, 250); 
 
         setTimeout(function(){
-        	//$("#" + pageOut + " > header").css("top", "calc(50% - 101px)");
         	$("#" + pageOut + " > header").removeClass("animate");
 		    $("#" + pageOut + " > *").css("opacity", "0");
 		    $("#" + pageOut + " > *").css("visibility", "hidden");	
