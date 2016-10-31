@@ -66,8 +66,6 @@ textarea {
     position: relative;
 }
 
-.right header {}
-
 .right h1 {
     color: #555;
     font-family: "Montserrat", sans-serif;
@@ -171,7 +169,7 @@ nav > ul > li > button,
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3em;    
+    padding: 3em;
     height: 600px;
 }
 
@@ -350,8 +348,8 @@ form label {
     background-color: rgba(73, 200, 255, 0.5);
 }
 
-.work-element > div{
-	width: 300px;
+.work-element > div {
+    width: 300px;
 }
 
 .work-element img {
@@ -359,16 +357,15 @@ form label {
     height: auto;
     display: block;
     position: relative;
-
 }
 
 @media screen and (max-width: 800px) {
     body {
         overflow: scroll;
     }
-    .go-back-button{
-    	right: 10px;
-    	top: 10px;	
+    .go-back-button {
+        right: 10px;
+        top: 10px;
     }
     .container {
         flex-direction: column;
@@ -382,20 +379,20 @@ form label {
         height: auto;
     }
     .left,
-	.right {
-	    max-height: none;
-	    padding: 0;
-	}
-	.work-element {
-		width: 100%;
-	}
+    .right {
+        max-height: none;
+        padding: 0;
+    }
+    .work-element {
+        width: 100%;
+    }
     #index,
-	#about,
-	#work,
-	#contact {
-	    padding: 1.5em;
-	    height: auto;
-	}
+    #about,
+    #work,
+    #contact {
+        padding: 1.5em;
+        height: auto;
+    }
     .left img {
         margin: 0;
         width: 100%;
