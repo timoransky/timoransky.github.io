@@ -67,14 +67,15 @@
 	</div>
 	<script>
 		$(document).ready(function(){
+		    $('.nav').css('width', $('.content').width());
 		    $(window).scroll(function(){
 		    	scrollTop = $(window).scrollTop()
 		        console.log(scrollTop); 
 		        if (scrollTop > $('.header').height()) {
-		        	$('.nav').addClass('fixed')
-		        	$('.nav').css('width', $('.content').width())
+		        	$('.nav').addClass('fixed');
+		        	
 		        } else {
-		        	$('.nav').removeClass('fixed')
+		        	$('.nav').removeClass('fixed');
 		        }
 		    })
 		})
