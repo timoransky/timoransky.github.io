@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Personal v2</title>
+	<title>Stellar</title>
 	<link rel="stylesheet" href="./main.css">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
@@ -72,6 +72,7 @@
 		        console.log(scrollTop); 
 		        if (scrollTop > $('.header').height()) {
 		        	$('.nav').addClass('fixed')
+		        	$('.nav').css('width', $('.content').width())
 		        } else {
 		        	$('.nav').removeClass('fixed')
 		        }
