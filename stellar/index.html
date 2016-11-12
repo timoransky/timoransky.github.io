@@ -10,6 +10,7 @@
 	  src="https://code.jquery.com/jquery-3.1.1.min.js"
 	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	  crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="page">
@@ -61,7 +62,6 @@
 					<a href="" class="button blue">Get started</a>
 					<a href="" class="button">Learn more</a>
 				</div>
-				
 			</section>
 		</div>
 	</div>
@@ -69,11 +69,9 @@
 		$(document).ready(function(){
 		    $('.nav').css('width', $('.content').width());
 		    $(window).scroll(function(){
-		    	scrollTop = $(window).scrollTop()
-		        console.log(scrollTop); 
+		    	scrollTop = $(window).scrollTop();
 		        if (scrollTop > $('.header').height()) {
 		        	$('.nav').addClass('fixed');
-		        	
 		        } else {
 		        	$('.nav').removeClass('fixed');
 		        }
@@ -82,8 +80,10 @@
 		$(document).on('click', 'a', function(event){
 		    event.preventDefault();
 		    // made by jan timoransky
+		    $('.nav-list-element').removeClass('active');
+		    $(this.parentElement).addClass('active');
 		    $('html, body').animate({
-		        scrollTop: $( $.attr(this, 'href') ).offset().top
+		        scrollTop: $( $.attr(this, 'href') ).offset().top-40
 		    }, 500);
 		});
 	</script>
