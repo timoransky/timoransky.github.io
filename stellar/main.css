@@ -218,12 +218,13 @@ h1, h2, h3, h4, h5{
 .col-row {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 }
 
 .col-element {
 	width: 33%;
+	min-width: 240px;
 	padding: 40px;
 	display: flex;
 	flex-direction: column;
@@ -234,5 +235,14 @@ h1, h2, h3, h4, h5{
 .col-element .image {
 	width: 150px;
 	height: 150px;
+}
+
+@media screen and (max-width: 800px){
+	.col-element {
+		width: 100%;
+	}
+	.button-row {
+		flex-direction: column;
+	}
 }
 
