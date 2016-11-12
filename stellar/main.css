@@ -70,6 +70,10 @@ h1, h2, h3, h4, h5{
 }
 
 .fixed {
+	padding-top: 40px;
+}
+
+.fixed > .nav {
 	position: fixed;
 	top: 0;
 	padding: 10px;
@@ -216,6 +220,7 @@ h1, h2, h3, h4, h5{
 }
 
 .col-row {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -238,11 +243,27 @@ h1, h2, h3, h4, h5{
 }
 
 @media screen and (max-width: 800px){
+	.page {
+		padding: 10px;
+	}
+	.container .image{
+		width: 250px;
+		height: 250px;
+	}
 	.col-element {
 		width: 100%;
 	}
 	.button-row {
 		flex-direction: column;
+	}
+	.col-element {
+		width: 100%;
+		min-width: 0;
+		padding: 0;
+	}
+	.col-element .image {
+		width: 100px;
+		height: 100px;
 	}
 }
 
