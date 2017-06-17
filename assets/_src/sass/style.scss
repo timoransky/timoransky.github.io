@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Righteous&subset=latin-ext');
+@import '_reset';
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background: #1b1820;
+}
+
+h1 {
+    font-size: 5em;
+    display: block;
+    color: white;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    font-family: 'Righteous', cursive;
+    position: relative;
+    letter-spacing: 4px;
+}
+
+#scene {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	.layer{
+	    display: flex!important;
+	    justify-content: center;
+	    align-items: center;
+	    width: 100%;
+	    height: 100%;
+	    max-width: 100vw;
+	    max-height: 100vh;
+
+	    img {
+		    display: block;
+		    width: 100%;
+		    height: auto;
+		}
+	}
+
+	.bottom {
+	    width: 100%;
+	    height: 100%;
+	    background-image: linear-gradient(-180deg,transparent 76%,#000 100%);
+	    border: 20px solid white;
+	}
+
+	.top {
+	    width: 100%;
+	    height: 100%;
+	    opacity: .36;
+	    background-image: linear-gradient(-134deg, #e3006e 0, #7f00ff 100%), linear-gradient(-180deg, transparent 76%, #000 100%);
+	    border: 20px solid white;
+	}
+
+	.confetti {
+		display: block;
+	    width: 100%;
+	    height: 100%;
+	    background: url('') no-repeat;
+	    background-position: 50% 10%;
+	    background-size: 2560px 890px;
+	    position: absolute;
+	    top: 0;
+	    z-index: 0;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    display: none!important;
+	}
+}
