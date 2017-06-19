@@ -1,52 +1,62 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Ján Timoranský</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <meta property="og:title" content="Ján Timoranský" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://timoransky.github.io/" />
     <meta property="og:image" content="https://timoransky.github.io/assets/img/share.png" />
-
     <link rel="stylesheet" href="assets/css/style.min.css">
-    
     <!--[if lt IE 9]>
         <script src="assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script>
     <![endif]-->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-73391190-3', 'auto');
-      ga('send', 'pageview');
+    ga('create', 'UA-73391190-3', 'auto');
+    ga('send', 'pageview');
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="scene">
-      <div class="layer bottom" data-depth="0.00"></div>
-      <div class="layer top" data-depth="0.00"></div>
-      
-      <div class="layer" data-depth="0.20">
-          <img src="assets/img/first.svg" alt="">
-      </div>
-      <div class="layer" data-depth="0.40">
-          <img src="assets/img/second.svg" alt="">
-      </div>
-      <div class="layer" data-depth="0.60">
-          <img src="assets/img/third.svg" alt="">
-      </div>
-      <div class="layer" data-depth="0.05">
-          <h1>Ján <br>Timoranský</h1>
-      </div>
+        <div class="layer bottom" data-depth="0.00"></div>
+        <div class="layer top" data-depth="0.00"></div>
+        <div class="layer" data-depth="0.2">
+            <div class="img">
+                <img src="assets/img/avatar.jpg" alt="">
+            </div>
+        </div>
+        <div class="layer" data-depth="0.20">
+            <img src="assets/img/first.svg" alt="">
+        </div>
+        <div class="layer" data-depth="0.40">
+            <img src="assets/img/second.svg" alt="">
+        </div>
+        <div class="layer" data-depth="0.60">
+            <img src="assets/img/third.svg" alt="">
+        </div>
+        <div class="layer" data-depth="0.1">
+            <h1>Ján <br>Timoranský</h1>
+        </div>
     </div>
-    
     <script src="assets/js/vendor/jquery-3.2.1.min.js"></script>
     <script src="assets/js/main.min.js"></script>
-  </body>
+</body>
+
 </html>
