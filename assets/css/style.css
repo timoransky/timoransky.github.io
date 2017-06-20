@@ -5,6 +5,48 @@
   margin: 0;
   padding: 0; }
 
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0; }
+  30% {
+    transform: scale(0);
+    opacity: 0; }
+  60% {
+    transform: scale(1.1);
+    opacity: 1; }
+  80% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes bounceInDelayed {
+  0% {
+    transform: scale(0);
+    opacity: 0; }
+  50% {
+    transform: scale(0);
+    opacity: 0; }
+  80% {
+    transform: scale(1.05);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0; }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.7; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
 body {
   font-family: 'Open Sans', sans-serif; }
 
@@ -21,7 +63,9 @@ h1 {
   text-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
   font-family: 'Righteous', cursive;
   position: relative;
-  letter-spacing: 4px; }
+  letter-spacing: 4px;
+  animation-name: bounceInDelayed;
+  animation-duration: 3s; }
   @media screen and (max-width: 768px) {
     h1 {
       font-size: 4em; } }
@@ -31,6 +75,8 @@ h1 {
   @media screen and (max-width: 320px) {
     h1 {
       font-size: 2em; } }
+  h1:hover {
+    color: black; }
 
 #scene {
   width: 100%;
@@ -50,7 +96,9 @@ h1 {
     #scene .layer img {
       display: block;
       width: 100%;
-      height: auto; }
+      height: auto;
+      animation-name: fadeIn;
+      animation-duration: 2s; }
       @media screen and (max-width: 768px) {
         #scene .layer img {
           width: auto;
@@ -98,7 +146,9 @@ h1 {
     -ms-flex-align: center;
         align-items: center;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
-    position: relative; }
+    position: relative;
+    animation-name: bounceIn;
+    animation-duration: 3s; }
     @media screen and (max-width: 425px) {
       #scene .img {
         margin-left: 100px; } }
@@ -122,4 +172,5 @@ h1 {
       height: 105%;
       width: auto;
       top: -2.5% !important;
-      left: -100px !important; }
+      left: -100px !important;
+      z-index: -2; }
