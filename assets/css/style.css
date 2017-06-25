@@ -47,6 +47,12 @@
     transform: scale(1);
     opacity: 1; } }
 
+@keyframes borderify {
+  0% {
+    border: 20px solid rgba(255, 255, 255, 0); }
+  100% {
+    border: 20px solid white; } }
+
 body {
   font-family: 'Open Sans', sans-serif; }
 
@@ -174,3 +180,29 @@ h1 {
       top: -2.5% !important;
       left: -100px !important;
       z-index: -2; }
+
+#scene .bottom {
+  background: black; }
+
+#scene .top {
+  opacity: 0.9;
+  background: #ff00cc;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #333399, #ff00cc);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #FEAC5E;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #C04848;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #480048, #C04848);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #AA076B;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #61045F, #AA076B);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
