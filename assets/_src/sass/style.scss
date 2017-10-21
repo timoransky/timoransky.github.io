@@ -13,14 +13,19 @@ body {
 .container {
 	max-width: 1200px;
 	margin: auto;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .hero {
 	width: 100%;
 	margin: auto;
+	max-height: 700px;
 
 	padding: 80px 40px;
-	min-height: 100vh;
+	height: 100%;
 
 	background: {
 		color: #ffffff;
@@ -36,6 +41,11 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	position: relative;
+
+	&__text {
+		margin-bottom: 40px;
+		align-self: flex-end;
+	}
 
 	&__name {
 		font-size: 5em;
@@ -66,6 +76,8 @@ body {
 		border-radius: 50%;
 		position: relative;
 		z-index: 2;
+		margin-top: 40px;
+		align-self: flex-start;
 
 		transition: all ease-in-out 1s;
 		opacity: 0;

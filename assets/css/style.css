@@ -13,13 +13,21 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: auto; }
+  margin: auto;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
 
 .hero {
   width: 100%;
   margin: auto;
+  max-height: 700px;
   padding: 80px 40px;
-  min-height: 100vh;
+  height: 100%;
   background-color: #ffffff;
   background-image: url();
   background-position: center;
@@ -33,6 +41,10 @@ body {
   -ms-flex-align: center;
       align-items: center;
   position: relative; }
+  .hero__text {
+    margin-bottom: 40px;
+    -ms-flex-item-align: end;
+        align-self: flex-end; }
   .hero__name {
     font-size: 5em;
     font-weight: 300;
@@ -54,6 +66,9 @@ body {
     border-radius: 50%;
     position: relative;
     z-index: 2;
+    margin-top: 40px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     transition: all ease-in-out 1s;
     opacity: 0; }
     .hero__foto_container.opacity {
