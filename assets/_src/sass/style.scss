@@ -17,13 +17,17 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@media screen and (max-width: 768px) {
+		min-height: 100vh;
+		height: auto;
+	}
 }
 
 .hero {
 	width: 100%;
 	margin: auto;
 	max-height: 700px;
-
 	padding: 80px 40px;
 	height: 100%;
 
@@ -42,19 +46,54 @@ body {
 	align-items: center;
 	position: relative;
 
+	@media screen and (max-width: 1024px) {
+	    padding: 40px 20px
+	}
+
+	@media screen and (max-width: 768px) {
+	    flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		padding: 40px;
+		height: auto;
+	}
+
 	&__text {
 		margin-bottom: 40px;
 		align-self: flex-end;
+
+		@media screen and (max-width: 768px) {
+		    margin-bottom: 20px;
+			align-self: center;
+		}
 	}
 
 	&__name {
 		font-size: 5em;
 		font-weight: 300;
 		margin: 0;
+
+		@media screen and (max-width: 768px) {
+			font-size: 4em;
+		}
+
+		@media screen and (max-width: 426px) {
+			font-size: 3em;
+		}
+
 	}
 
 	&__position {
 		font-size: 2em;
+
+		@media screen and (max-width: 768px) {
+			font-size: 1.8em;
+		}
+
+		@media screen and (max-width: 426px) {
+			font-size: 1.5em;
+		}
+
 	}
 
 	&__name, &__position {
@@ -82,6 +121,15 @@ body {
 		transition: all ease-in-out 1s;
 		opacity: 0;
 
+		@media screen and (max-width: 768px) {
+			align-self: center;
+			margin-bottom: 40px;
+		}
+
+		@media screen and (max-width: 426px) {
+			width: 200px;
+		}
+
 		&.opacity {
 			opacity: 1;
 		}
@@ -97,6 +145,11 @@ body {
 			top: -40px;
 			left: 40px;
 			background: $gradient_reversed;
+
+			@media screen and (max-width: 426px) {
+				top: -30px;
+				left: 30px;
+			}
 		}
 
 		&::after {
@@ -106,6 +159,11 @@ body {
 			left: calc(40px + 5%);
 			background: white;
 			z-index: -1;
+
+			@media screen and (max-width: 426px) {
+				top: calc(-30px + 5%);
+				left: calc(30px + 5%);
+			}
 		}
 	}
 
