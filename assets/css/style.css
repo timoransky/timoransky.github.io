@@ -144,7 +144,11 @@ body {
           top: calc(-30px + 5%);
           left: calc(30px + 5%); } }
   .hero__links {
-    margin-top: 40px; }
+    margin-top: 40px;
+    transition: all ease-in-out 1s;
+    opacity: 0; }
+    .hero__links.opacity {
+      opacity: 1; }
     .hero__links a {
       color: #ff00cc;
       display: inline-block;
