@@ -63,12 +63,12 @@ body {
   }
 
   &_name {
-    font-size: 5em;
+    font-size: 4.4em;
     font-weight: 300;
     margin: 0;
 
     @media screen and (max-width: 768px) {
-      font-size: 4em;
+      font-size: 3.7em;
     }
 
     @media screen and (max-width: 426px) {
@@ -78,14 +78,14 @@ body {
   }
 
   &_position {
-    font-size: 2em;
+    font-size: 1.8em;
 
     @media screen and (max-width: 768px) {
-      font-size: 1.8em;
+      font-size: 1.6em;
     }
 
     @media screen and (max-width: 426px) {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
 
   }
