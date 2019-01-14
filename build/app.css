@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&subset=latin-ext);* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: #22252C;
+  overflow-x: hidden;
+  padding: 40px 0 80px;
+}
+
+.container--hero {
+  margin: 80px auto;
+}
+
+.hero {
+  width: 100%;
+  margin: auto;
+  max-height: 700px;
+  padding: 80px 40px;
+  height: 100%;
+  background-color: #ffffff;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    height: auto;
+  }
+}
+
+.hero_text {
+  margin-bottom: 40px;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .hero_text {
+    margin-bottom: 20px;
+    align-self: center;
+  }
+}
+
+.hero_name {
+  font-size: 4.4em;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero_name {
+    font-size: 3.7em;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .hero_name {
+    font-size: 3em;
+  }
+}
+
+.hero_position {
+  font-size: 1.8em;
+}
+
+@media screen and (max-width: 768px) {
+  .hero_position {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .hero_position {
+    font-size: 1.4em;
+  }
+}
+
+.hero_name,
+.hero_position {
+  width: 100%;
+  color: #FA7268;
+  background: linear-gradient(to right, #FA7268, #FF978F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all ease-in-out 1s;
+}
+
+.hero_foto-container {
+  width: 300px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  align-self: flex-start;
+  transition: all ease-in-out 1s;
+}
+
+@media screen and (max-width: 768px) {
+  .hero_foto-container {
+    align-self: center;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .hero_foto-container {
+    width: 200px;
+  }
+}
+
+.hero_foto-container::before,
+.hero_foto-container::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  background: linear-gradient(-60deg, #FA7268, #FF978F);
+}
+
+@media screen and (max-width: 426px) {
+  .hero_foto-container::before,
+  .hero_foto-container::after {
+    top: -30px;
+    left: 30px;
+  }
+}
+
+.hero_foto-container::after {
+  width: 90%;
+  height: 90%;
+  top: calc(-40px + 5%);
+  left: calc(40px + 5%);
+  background: white;
+  z-index: -1;
+}
+
+@media screen and (max-width: 426px) {
+  .hero_foto-container::after {
+    top: calc(-30px + 5%);
+    left: calc(30px + 5%);
+  }
+}
+
+.hero_links {
+  margin-top: 40px;
+  transition: all ease-in-out 1s;
+}
+
+.hero_links a {
+  color: #FA7268;
+  display: inline-block;
+  margin: 0 15px 0 5px;
+  transition: all ease-in-out 0.3s;
+}
+
+.hero_links a:hover {
+  color: #FF978F;
+}
+
+.hero_foto {
+  max-width: 300px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero_foto img {
+  width: 100%;
+  display: block;
+}
+
+.cv-details h3 {
+  font-size: 1.8em;
+  font-weight: 300;
+  margin: 0.75em auto 0.5em;
+  text-transform: lowercase;
+  color: #FA7268;
+  background: linear-gradient(to right, #FA7268, #FF978F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all ease-in-out 1s;
+}
+
+.cv-details h4,
+.cv-details p,
+.cv-details ul {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.cv-details h4 {
+  font-weight: 500;
+  text-align: right;
+  text-transform: lowercase;
+}
+
+.cv-details p strong {
+  font-weight: 500;
+}
+
+.cv-details p small {
+  font-size: 0.9em;
+}
+
+.cv-details ul {
+  margin-bottom: 15px;
+  list-style: none;
+  list-style-position: inside;
+}
+
+.cv-details ul li {
+  margin-bottom: 5px;
+}
+
+.cv-details a {
+  color: #FA7268;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.cv-details a:hover {
+  color: #FF978F;
+}
+
