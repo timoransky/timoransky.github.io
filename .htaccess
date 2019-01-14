@@ -1,0 +1,35 @@
+Options +MultiViews
+RewriteEngine On
+RewriteBase     /
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+#RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# BEGIN GZIP
+<ifmodule mod_deflate.c>
+    <ifmodule mod_filter.c>
+        AddOutputFilterByType DEFLATE text/html text/xml text/css text/javascript application/javascript
+    </ifmodule>
+</ifmodule>
+# END GZIP
+
+# BEGIN CACHE
+<ifmodule mod_headers.c>
+    Header set Connection keep-alive
+
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+        Header set Cache-Control "max-age=1209600, public"
+    </filesMatch>
+
+    <filesMatch "\.(eot|svg|ttf|woff|woff2)$">
+        Header set Cache-Control "max-age=290304000, public"
+    </filesMatch>
+</ifmodule>
+# END CACHE
