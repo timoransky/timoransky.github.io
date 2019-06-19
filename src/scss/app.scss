@@ -1,5 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&subset=latin-ext');
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Raleway:300,400,500,600&display=swap&subset=latin-ext');
+
+// Bootstrap (grid only)
+@import "~bootstrap/dist/css/bootstrap-grid.css";
+
+// Variables
 @import 'variables';
+
+// Mixins
+@import 'mixins';
 
 * {
   box-sizing: border-box;
@@ -7,24 +16,28 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
-  color: $text_color_dark;
-  overflow-x: hidden;
-  padding: 40px 0 80px;
+html {
+  font-size: 62.5%;
 }
 
-.container--hero {
-  margin: 80px auto;
+body {
+  @include font-size(16);
+  font-family: 'Raleway', sans-serif;
+  color: $text_color_dark;
+  overflow-x: hidden;
+  padding: 40px 0 160px;
+}
+
+.container {
+  &--hero {
+    margin: 80px auto 160px;
+  }
 }
 
 .hero {
   width: 100%;
   margin: auto;
   max-height: 700px;
-  padding: 80px 40px;
-  height: 100%;
 
   background: {
     color: #ffffff;
@@ -36,61 +49,38 @@ body {
   color: $text_color_light;
 
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   position: relative;
 
-  @media screen and (max-width: 1024px) {
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  height: auto;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
     padding: 40px 20px
   }
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    height: auto;
+  @media screen and (min-width: 1024px) {
+    padding: 80px 40px;
+    height: 100%;
   }
 
   &_text {
-    margin-bottom: 40px;
-    align-self: flex-end;
+    margin-bottom: 20px;
+    align-self: center;
 
-    @media screen and (max-width: 768px) {
-      margin-bottom: 20px;
-      align-self: center;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 40px;
+      align-self: flex-end;
     }
-  }
-
-  &_name {
-    font-size: 4.4em;
-    font-weight: 300;
-    margin: 0;
-
-    @media screen and (max-width: 768px) {
-      font-size: 3.7em;
-    }
-
-    @media screen and (max-width: 426px) {
-      font-size: 3em;
-    }
-
-  }
-
-  &_position {
-    font-size: 1.8em;
-
-    @media screen and (max-width: 768px) {
-      font-size: 1.6em;
-    }
-
-    @media screen and (max-width: 426px) {
-      font-size: 1.4em;
-    }
-
   }
 
   &_name, &_position {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     width: 100%;
     color: $primary;
     background: $gradient;
@@ -99,8 +89,33 @@ body {
     transition: all ease-in-out 1s;
   }
 
+  &_name {
+    @include font-size(40);
+    margin: 0;
+
+    @media screen and (min-width: 426px) {
+      @include font-size(60);
+    }
+
+    @media screen and (min-width: 768px) {
+      @include font-size(75);
+    }
+  }
+
+  &_position {
+    @include font-size(22);
+
+    @media screen and (min-width: 426px) {
+      @include font-size(25);
+    }
+
+    @media screen and (min-width: 768px) {
+      @include font-size(35);
+    }
+  }
+
   &_foto-container {
-    width: 300px;
+    width: 200px;
     border-radius: 50%;
     position: relative;
     z-index: 2;
@@ -109,13 +124,13 @@ body {
 
     transition: all ease-in-out 1s;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 426px) {
       align-self: center;
       margin-bottom: 40px;
     }
 
-    @media screen and (max-width: 426px) {
-      width: 200px;
+    @media screen and (min-width: 768px) {
+      width: 300px;
     }
 
     &::before, &::after {
@@ -126,27 +141,27 @@ body {
       border-radius: 50%;
       z-index: -1;
       position: absolute;
-      top: -40px;
-      left: 40px;
+      top: -30px;
+      left: 30px;
       background: $gradient_reversed;
 
-      @media screen and (max-width: 426px) {
-        top: -30px;
-        left: 30px;
+      @media screen and (min-width: 426px) {
+        top: -40px;
+        left: 40px;
       }
     }
 
     &::after {
       width: 90%;
       height: 90%;
-      top: calc(-40px + 5%);
-      left: calc(40px + 5%);
+      top: calc(-30px + 5%);
+      left: calc(30px + 5%);
       background: white;
       z-index: -1;
 
-      @media screen and (max-width: 426px) {
-        top: calc(-30px + 5%);
-        left: calc(30px + 5%);
+      @media screen and (min-width: 426px) {
+        top: calc(-40px + 5%);
+        left: calc(40px + 5%);
       }
     }
   }
@@ -168,7 +183,7 @@ body {
   }
 
   &_foto {
-    max-width: 300px;
+    max-width: 350px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
@@ -183,10 +198,11 @@ body {
 }
 
 .cv-details {
-  h3 {
-    font-size: 1.8em;
+  &_title {
+    @include font-size(24);
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    margin: .75em auto .5em;
+    margin: 1.5em auto .5em;
     text-transform: lowercase;
 
     color: $primary;
@@ -194,12 +210,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all ease-in-out 1s;
-
   }
 
   h4, p, ul {
-    font-size: 1.1em;
-    font-weight: 400;
+    @include font-size(18);
+    font-weight: 300;
     margin-bottom: 5px;
   }
 

@@ -1,0 +1,9 @@
+// Mixin for Rem Font Sizing
+@mixin font-size($sizeValue: 16, $line-height: null) {
+  font-size: $sizeValue * 1px;
+  font-size: ($sizeValue / 10) * 1rem;
+
+  @if $line-height != null {
+    line-height: $line-height/$sizeValue * 1em;
+  }
+}

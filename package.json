@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.mix.js",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.2.0",
     "laravel-mix": "^4.0.16",
     "node-sass": "^4.11.0",
@@ -11,7 +12,8 @@
   },
   "devDependencies": {
     "resolve-url-loader": "^2.3.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "scripts": {
     "dev": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
