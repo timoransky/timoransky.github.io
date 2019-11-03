@@ -3729,7 +3729,7 @@ body[data-color-scheme=dark] .theme-toggle-btn [data-icon=moon] {
 }
 
 .container--hero .row {
-  width: 100%;
+  width: calc(100% + 30px);
 }
 
 .hero {
