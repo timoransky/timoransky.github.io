@@ -17,8 +17,8 @@
 
     <link rel="canonical" href="https://timoransky.github.io">
 
-    <link rel="stylesheet" href="/build/app.css">
-    <script src="https://kit.fontawesome.com/80f75efdd0.js"></script>
+    <script async src="https://kit.fontawesome.com/80f75efdd0.js"></script>
+    <link rel="stylesheet" href="/dist/app.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73391190-3"></script>
@@ -32,8 +32,13 @@
 </head>
 <body>
 
+    <button class="theme-toggle-btn">
+        <i class="fas fa-sun fa-2x"></i>
+        <i class="fas fa-moon fa-2x"></i>
+    </button>
+
     <div class="container container--hero">
-        <div class="row flex-column-reverse flex-md-row">
+        <div class="row flex-column-reverse flex-md-row justify-content-center">
             <div class="col-md-8 d-flex flex-column justify-content-end">
                 <h1 class="hero_name">Ján Timoranský</h1>
                 <h2 class="hero_position">front-end web developer</h2>
@@ -61,7 +66,7 @@
                     <h4>age</h4>
                 </div>
                 <div class="col-8 col-md-6">
-                    <p>21</p>
+                    <p>22</p>
                 </div>
             </div>
             <div class="row">
@@ -192,5 +197,7 @@
             </div>
         </div>
     </div>
+
+    <script src="/dist/app.js"></script>
 </body>
 </html>

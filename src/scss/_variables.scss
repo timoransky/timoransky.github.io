@@ -1,6 +1,33 @@
-$text_color_dark: #22252C;
-$text_color_light: #FFFFFF;
+// A map of breakpoints.
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$background-color-light: #fff;
+$background-color-dark: #14181f;
+$background-highlight-dark: #212631;
+$background-highlight-light: #f3f7f9;
+$text-color-dark: #444;
+$text-color-light: #ced8de;
 $primary: #FA7268;
 $secondary: #FF978F;
 $gradient: linear-gradient(to right, $primary, $secondary);
-$gradient_reversed: linear-gradient(-60deg, $primary, $secondary);
+$gradient-reversed: linear-gradient(-60deg, $primary, $secondary);
+
+:root {
+  --background-color: #{$background-color-light};
+  --background-highlight: #{$background-highlight-light};
+  --text-color: #{$text-color-dark};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+
+  @media (prefers-color-scheme: dark) {
+    --background-color: #{$background-color-dark};
+    --background-highlight: #{$background-highlight-dark};
+    --text-color: #{$text-color-light};
+  }
+}

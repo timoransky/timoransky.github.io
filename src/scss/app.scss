@@ -10,6 +10,10 @@
 // Mixins
 @import 'mixins';
 
+::selection {
+  background: transparent;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,14 +27,58 @@ html {
 body {
   @include font-size(16);
   font-family: 'Raleway', sans-serif;
-  color: $text_color_dark;
+  color: var(--text-color);
+  background-color: var(--background-color);
   overflow-x: hidden;
-  padding: 40px 0 160px;
+  padding: 0 0 160px;
+  position: relative;
+  transition: color .6s, background-color .6s;
+
+  &[data-color-scheme="light"] {
+    --background-color: #{$background-color-light};
+    --background-highlight: #{$background-highlight-light};
+    --text-color: #{$text-color-dark};
+
+    .theme-toggle-btn {
+      [data-icon="sun"] {
+        display: none;
+      }
+      [data-icon="moon"] {
+        display: block;
+      }
+    }
+  }
+
+  &[data-color-scheme="dark"] {
+    --background-color: #{$background-color-dark};
+    --background-highlight: #{$background-highlight-dark};
+    --text-color: #{$text-color-light};
+
+    .theme-toggle-btn {
+      [data-icon="sun"] {
+        display: block;
+      }
+      [data-icon="moon"] {
+        display: none;
+      }
+    }
+  }
 }
 
 .container {
   &--hero {
-    margin: 80px auto 160px;
+    min-height: 100vh;
+    display: flex;
+
+    @include respond-above(sm) {
+      min-height: 0;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+
+    .row {
+      width: 100%;
+    }
   }
 }
 
@@ -38,15 +86,6 @@ body {
   width: 100%;
   margin: auto;
   max-height: 700px;
-
-  background: {
-    color: #ffffff;
-    position: center;
-    size: cover;
-    attachment: fixed;
-  }
-
-  color: $text_color_light;
 
   display: flex;
   position: relative;
@@ -57,13 +96,13 @@ body {
   padding: 40px;
   height: auto;
 
-  @media screen and (min-width: 768px) {
+  @include respond-above(768px) {
     flex-direction: row;
     justify-content: space-around;
     padding: 40px 20px
   }
 
-  @media screen and (min-width: 1024px) {
+  @include respond-above(1024px) {
     padding: 80px 40px;
     height: 100%;
   }
@@ -72,7 +111,7 @@ body {
     margin-bottom: 20px;
     align-self: center;
 
-    @media screen and (min-width: 768px) {
+    @include respond-above(md) {
       margin-bottom: 40px;
       align-self: flex-end;
     }
@@ -82,22 +121,20 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     width: 100%;
-    color: $primary;
-    background: $gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     transition: all ease-in-out 1s;
+
+    @include gradient-text();
   }
 
   &_name {
     @include font-size(40);
     margin: 0;
 
-    @media screen and (min-width: 426px) {
+    @include respond-above(426px) {
       @include font-size(60);
     }
 
-    @media screen and (min-width: 768px) {
+    @include respond-above(md) {
       @include font-size(75);
     }
   }
@@ -105,11 +142,11 @@ body {
   &_position {
     @include font-size(22);
 
-    @media screen and (min-width: 426px) {
+    @include respond-above(426px) {
       @include font-size(25);
     }
 
-    @media screen and (min-width: 768px) {
+    @include respond-above(md) {
       @include font-size(35);
     }
   }
@@ -120,16 +157,17 @@ body {
     position: relative;
     z-index: 2;
     margin-top: 40px;
+    margin-bottom: 40px;
     align-self: flex-start;
 
     transition: all ease-in-out 1s;
 
-    @media screen and (min-width: 426px) {
+    @include respond-above(426px) {
       align-self: center;
       margin-bottom: 40px;
     }
 
-    @media screen and (min-width: 768px) {
+    @include respond-above(md) {
       width: 300px;
     }
 
@@ -143,9 +181,9 @@ body {
       position: absolute;
       top: -30px;
       left: 30px;
-      background: $gradient_reversed;
+      background: $gradient-reversed;
 
-      @media screen and (min-width: 426px) {
+      @include respond-above(426px) {
         top: -40px;
         left: 40px;
       }
@@ -156,10 +194,12 @@ body {
       height: 90%;
       top: calc(-30px + 5%);
       left: calc(30px + 5%);
-      background: white;
+      background: transparent;
+      background-color: var(--background-color);
       z-index: -1;
+      transition: background-color .6s;
 
-      @media screen and (min-width: 426px) {
+      @include respond-above(426px) {
         top: calc(-40px + 5%);
         left: calc(40px + 5%);
       }
@@ -169,10 +209,14 @@ body {
   &_links {
     margin-top: 40px;
     transition: all ease-in-out 1s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
     a {
       color: $primary;
       display: inline-block;
+      height: 32px;
       margin: 0 15px 0 5px;
       transition: all ease-in-out 0.3s;
 
@@ -204,12 +248,9 @@ body {
     font-weight: 300;
     margin: 1.5em auto .5em;
     text-transform: lowercase;
-
-    color: $primary;
-    background: $gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     transition: all ease-in-out 1s;
+
+    @include gradient-text();
   }
 
   h4, p, ul {
@@ -250,6 +291,43 @@ body {
 
     &:hover {
       color: $secondary;
+      text-decoration: underline;
+    }
+  }
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--text-color);
+  cursor: pointer;
+  opacity: .6;
+  transition: all .2s linear;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  @include respond-above(576px) {
+    top: 40px;
+    left: 40px;
+  }
+
+  [data-icon="sun"] {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-icon="sun"] {
+      display: block;
+    }
+    [data-icon="moon"] {
+      display: none;
     }
   }
 }
