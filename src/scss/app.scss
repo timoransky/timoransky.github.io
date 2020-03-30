@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Raleway:300,400,500,600&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap&subset=latin-ext');
 
 // Bootstrap (grid only)
 @import "~bootstrap/dist/css/bootstrap-grid.css";
@@ -24,9 +24,13 @@ html {
   font-size: 62.5%;
 }
 
+body, html {
+  height: 100%;
+}
+
 body {
   @include font-size(16);
-  font-family: 'Raleway', sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   overflow-x: hidden;
@@ -242,6 +246,8 @@ body {
 }
 
 .cv-details {
+  padding-bottom: 150px;
+
   &_title {
     @include font-size(24);
     font-family: 'Montserrat', sans-serif;
@@ -251,6 +257,10 @@ body {
     transition: all ease-in-out 1s;
 
     @include gradient-text();
+  }
+
+  .row {
+    margin-bottom: 5px;
   }
 
   h4, p, ul {
@@ -275,7 +285,6 @@ body {
   }
 
   ul {
-    margin-bottom: 15px;
     list-style: none;
     list-style-position: inside;
 
@@ -285,13 +294,32 @@ body {
   }
 
   a {
-    color: $primary;
+    color: inherit;
+    //color: $primary;
     text-decoration: none;
     transition: all .2s ease-in-out;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% + 10px);
+      height: 6px;
+      bottom: -2px;
+      background: $primary;
+      position: absolute;
+      left: -5px;
+      z-index: -1;
+      transition: all 150ms ease-in;
+    }
 
     &:hover {
-      color: $secondary;
-      text-decoration: underline;
+      //color: $secondary;
+      //text-decoration: underline;
+
+      &::after {
+        height: calc(100% + 4px);
+      }
     }
   }
 }

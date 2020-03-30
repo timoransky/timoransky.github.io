@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Raleway:300,400,500,600&display=swap&subset=latin-ext);/*!
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap&subset=latin-ext);/*!
  * Bootstrap Grid v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
@@ -3673,10 +3673,15 @@ html {
   font-size: 62.5%;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 body {
   font-size: 16px;
   font-size: 1.6rem;
-  font-family: "Raleway", sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   overflow-x: hidden;
@@ -3938,6 +3943,10 @@ body[data-color-scheme=dark] .theme-toggle-btn [data-icon=moon] {
   display: block;
 }
 
+.cv-details {
+  padding-bottom: 150px;
+}
+
 .cv-details_title {
   font-size: 24px;
   font-size: 2.4rem;
@@ -3953,6 +3962,10 @@ body[data-color-scheme=dark] .theme-toggle-btn [data-icon=moon] {
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.cv-details .row {
+  margin-bottom: 5px;
 }
 
 .cv-details h4,
@@ -3979,7 +3992,6 @@ body[data-color-scheme=dark] .theme-toggle-btn [data-icon=moon] {
 }
 
 .cv-details ul {
-  margin-bottom: 15px;
   list-style: none;
   list-style-position: inside;
 }
@@ -3989,15 +4001,29 @@ body[data-color-scheme=dark] .theme-toggle-btn [data-icon=moon] {
 }
 
 .cv-details a {
-  color: #FA7268;
+  color: inherit;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
-.cv-details a:hover {
-  color: #FF978F;
-  text-decoration: underline;
+.cv-details a::after {
+  content: "";
+  display: block;
+  width: calc(100% + 10px);
+  height: 6px;
+  bottom: -2px;
+  background: #FA7268;
+  position: absolute;
+  left: -5px;
+  z-index: -1;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+.cv-details a:hover::after {
+  height: calc(100% + 4px);
 }
 
 .theme-toggle-btn {

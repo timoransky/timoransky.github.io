@@ -10749,8 +10749,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jan.timoransky/Sites/_valet/timoransky/src/js/app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jan.timoransky/Sites/_valet/timoransky/src/scss/app.scss */"./src/scss/app.scss");
+__webpack_require__(/*! C:\laragon\www\timoransky.github.io\src\js\app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\timoransky.github.io\src\scss\app.scss */"./src/scss/app.scss");
 
 
 /***/ })
