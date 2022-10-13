@@ -13,10 +13,9 @@ export const ImageCard: React.FC<
     className={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl 
       ${className}`}
   >
-    <Image
+    <img
       src={src}
       alt={alt}
-      layout="fill"
       className={`block h-full w-full object-cover ${objectFit}`}
     />
   </div>
