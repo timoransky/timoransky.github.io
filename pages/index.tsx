@@ -7,24 +7,27 @@ import { GithubIcon } from "../components/icons/GithubIcon";
 import { SpotifyIcon } from "../components/icons/SpotifyIcon";
 import { TwitterIcon } from "../components/icons/TwitterIcon";
 import { ImageCard } from "../components/ImageCard";
+import { ThemeToggleButton } from "../components/ThemeToggleButton";
 
 const Home: NextPage = () => (
-  <div className="flex min-h-screen flex-col pt-24 pb-16">
+  <div className="flex min-h-screen flex-col pb-8">
     <Head>
       <title>Ján Timoranský - Full stack developer</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <div className="fixed inset-0 mx-auto flex max-w-7xl justify-center sm:px-8">
-      <div className="flex w-full max-w-7xl bg-white ring-1 ring-zinc-100 lg:px-8" />
+      <div className="flex w-full max-w-7xl bg-white ring-1 ring-zinc-100 dark:bg-[#1a1a1a] dark:ring-zinc-200/10 lg:px-8" />
     </div>
 
     <div className="relative sm:px-8">
       <main>
         <div className="mx-auto max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
+            <ThemeToggleButton />
+
             <div className="mx-auto max-w-2xl lg:max-w-5xl">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl pt-24">
                 <img
                   src="https://avatars.githubusercontent.com/u/15653065?v=4"
                   className="h-20 w-20 rounded-full object-cover"
@@ -106,6 +109,12 @@ const Home: NextPage = () => (
         />
       </div>
     </div>
+
+    <footer>
+      <div className="relative mx-auto mt-10 max-w-2xl text-center text-xs text-zinc-300 dark:text-zinc-600">
+        Crafted with 💜 by me © {new Date().getFullYear()}
+      </div>
+    </footer>
   </div>
 );
 

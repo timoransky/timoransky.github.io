@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link rel="preload" as="image" href="https://holopin.me/timoransky" />
       </Head>
-      <body className="bg-zinc-50">
+      <body className="bg-zinc-50 dark:bg-[#121212]">
         <Main />
         <NextScript />
       </body>

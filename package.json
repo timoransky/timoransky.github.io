@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.12",
     "next": "latest",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
