@@ -7,7 +7,7 @@ export const HeroTitle: React.FC<Props> = () => (
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 200 200"
-      className="absolute left-[6.5rem] top-0 w-12 rotate-[60deg] fill-zinc-800 dark:fill-zinc-200"
+      className="absolute left-[6.5rem] top-0 w-12 rotate-[60deg] fill-gray-800 dark:fill-gray-200"
     >
       <path
         fillRule="evenodd"
@@ -19,7 +19,7 @@ export const HeroTitle: React.FC<Props> = () => (
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 350 350"
-      className="absolute -top-16 left-32 w-16 rotate-90 -scale-y-100 fill-zinc-300 dark:fill-zinc-600"
+      className="absolute -top-16 left-32 w-16 rotate-90 -scale-y-100 fill-gray-300 dark:fill-gray-600"
     >
       <path
         fillRule="evenodd"

@@ -17,7 +17,7 @@ const Home: NextPage = () => (
     </Head>
 
     <div className="fixed inset-0 mx-auto flex max-w-7xl justify-center sm:px-8">
-      <div className="flex w-full max-w-7xl bg-white ring-1 ring-zinc-100 dark:bg-[#1a1a1a] dark:ring-zinc-200/10 lg:px-8" />
+      <div className="flex w-full max-w-7xl bg-white ring-1 ring-gray-100 dark:bg-[#1a1a1a] dark:ring-gray-200/10 lg:px-8" />
     </div>
 
     <div className="relative sm:px-8">
@@ -111,7 +111,7 @@ const Home: NextPage = () => (
     </div>
 
     <footer>
-      <div className="relative mx-auto mt-10 max-w-2xl text-center text-xs text-zinc-300 dark:text-zinc-600">
+      <div className="relative mx-auto mt-10 max-w-2xl text-center text-xs text-gray-300 dark:text-gray-600">
         Crafted with 💜 by me © {new Date().getFullYear()}
       </div>
     </footer>
