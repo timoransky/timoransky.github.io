@@ -1,86 +1,127 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import { HeroText } from "../components/HeroText";
+import { HeroTitle } from "../components/HeroTitle";
+import { IconButton } from "../components/IconButton";
+import { GithubIcon } from "../components/icons/GithubIcon";
+import { SpotifyIcon } from "../components/icons/SpotifyIcon";
+import { TwitterIcon } from "../components/icons/TwitterIcon";
+import { ImageCard } from "../components/ImageCard";
 
 const Home: NextPage = () => {
+  const [stickers, setStickers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://www.holopin.io/api/stickers?username=timoransky")
+      .then((response) => response.json())
+      .then((data) => setStickers(data))
+      .catch((rejected) => {
+        console.error(rejected);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log(stickers);
+  }, [stickers]);
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col pt-24 pb-16">
       <Head>
-        <title>Create Next App</title>
+        <title>Ján Timoranský - Web developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <div className="fixed inset-0 mx-auto flex max-w-7xl justify-center sm:px-8">
+        <div className="flex w-full max-w-7xl bg-white ring-1 ring-zinc-100 lg:px-8" />
+      </div>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+      <div className="relative sm:px-8">
+        <main>
+          <div className="mx-auto max-w-7xl lg:px-8">
+            <div className="relative px-4 sm:px-8 lg:px-12">
+              <div className="mx-auto max-w-2xl lg:max-w-5xl">
+                <div className="max-w-2xl">
+                  <img
+                    src="https://avatars.githubusercontent.com/u/15653065?v=4"
+                    className="h-20 w-20 rounded-full object-cover"
+                  />
+                  <HeroTitle />
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
+                  <HeroText>
+                    Hi! I’m Ján Timoranský, a web developer, geek enthusiast and
+                    snack lover based in Bratislava. Other than snacking, I
+                    always try to keep up with new technologies (and all the
+                    javascript frameworks) on daily basis.
+                  </HeroText>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+                  <HeroText>
+                    I'm mostly skilled in VILT stack, which consists of Vue,
+                    Inertia.js, Laravel and Tailwind but ocasionally I use React
+                    as well.
+                  </HeroText>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
+                  <HeroText>
+                    Oh, and I also collect digital badges on{" "}
+                    <a
+                      href="https://holopin.io"
+                      className="text-[#c850c0] hover:text-[#e35cda]"
+                    >
+                      holopin
+                    </a>
+                    .
+                  </HeroText>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                  <div className="mt-8 flex gap-6">
+                    <IconButton
+                      label="Follow on Twitter"
+                      href="https://twitter.com/jtimoransky"
+                      icon={TwitterIcon}
+                    />
+                    <IconButton
+                      label="Follow on GitHub"
+                      href="https://github.com/timoransky"
+                      icon={GithubIcon}
+                    />
+                    <IconButton
+                      label="Follow on Spotify"
+                      href="https://open.spotify.com/user/11147893382"
+                      icon={SpotifyIcon}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div className="mt-16 sm:mt-20">
+        <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+          <ImageCard
+            src="https://holopin.me/timoransky"
+            className="-rotate-2"
+            objectFit="object-left"
+          />
+          <ImageCard
+            src="/img/me-in-office.jpg"
+            className="rotate-2"
+            objectFit="object-left"
+          />
+          <ImageCard
+            src="https://holopin.me/timoransky"
+            className="-rotate-2"
+          />
+          <ImageCard src="/img/me-in-meeting.jpg" className="rotate-1" />
+          <ImageCard
+            src="https://holopin.me/timoransky"
+            className="rotate-3"
+            objectFit="object-right"
+          />
         </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
