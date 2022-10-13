@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="preload" as="image" href="https://holopin.me/timoransky" />
       </Head>
       <body className="bg-zinc-50">
         <Main />
