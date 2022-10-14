@@ -37,10 +37,10 @@ const Home: NextPage = () => (
                 <HeroTitle />
 
                 <HeroText>
-                  Hi! I’m Ján Timoranský, a web developer, geek enthusiast and
-                  snack lover based in Bratislava. Other than snacking, I always
-                  try to keep up with new technologies (and all the javascript
-                  frameworks) on daily basis.
+                  Hi! I’m Ján Timoranský, a web developer, geek and snack lover
+                  based in Bratislava. Other than snacking, I always try to keep
+                  up with new technologies (and all the javascript frameworks)
+                  on daily basis.
                 </HeroText>
 
                 <HeroText>
