@@ -14,6 +14,46 @@ const Home: NextPage = () => (
     <Head>
       <title>Ján Timoranský - Full stack developer</title>
       <link rel="icon" href="/favicon.ico" />
+      <meta
+        name="description"
+        content="Hi! 👋 I’m Ján Timoranský, a web developer, geek and snack lover based in Bratislava."
+      />
+      <meta
+        property="og:image"
+        content="https://timoransky.github.io/img/og.png"
+      />
+      {/* <!-- Facebook Meta Tags --> */}
+      <meta property="og:url" content="https://timoransky.github.io/" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content="Ján Timoranský - Full stack developer"
+      />
+      <meta
+        property="og:description"
+        content="Hi! 👋 I’m Ján Timoranský, a web developer, geek and snack lover based in Bratislava."
+      />
+      <meta
+        property="og:image"
+        content="https://timoransky.github.io/img/og.png"
+      />
+
+      {/* <!-- Twitter Meta Tags --> */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="timoransky.github.io" />
+      <meta property="twitter:url" content="https://timoransky.github.io/" />
+      <meta
+        name="twitter:title"
+        content="Ján Timoranský - Full stack developer"
+      />
+      <meta
+        name="twitter:description"
+        content="Hi! 👋 I’m Ján Timoranský, a web developer, geek and snack lover based in Bratislava."
+      />
+      <meta
+        name="twitter:image"
+        content="https://timoransky.github.io/img/og.png"
+      />
     </Head>
 
     <div className="fixed inset-0 mx-auto flex max-w-7xl justify-center sm:px-8">
