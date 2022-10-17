@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { HeroText } from "../components/HeroText";
 import { HeroTitle } from "../components/HeroTitle";
 import { IconButton } from "../components/IconButton";

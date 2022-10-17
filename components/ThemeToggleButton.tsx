@@ -1,7 +1,7 @@
-import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+// import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
+import { MoonIcon } from "./icons/MoonIcon";
+import { SunIcon } from "./icons/SunIcon";
 
 export const ThemeToggleButton: React.FC<
   React.HTMLAttributes<HTMLDivElement>
