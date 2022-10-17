@@ -90,7 +90,7 @@ const Home: NextPage = () => (
                 <HeroText>
                   Oh, and I also collect digital badges on{" "}
                   <a
-                    href="https://holopin.io"
+                    href="https://www.holopin.io/@timoransky"
                     className="text-[#c850c0] hover:text-[#e35cda]"
                   >
                     holopin
