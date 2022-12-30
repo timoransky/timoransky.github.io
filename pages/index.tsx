@@ -77,13 +77,13 @@ const Home: NextPage = () => (
                 <HeroText>
                   Hi! I’m Ján Timoranský, a web developer, geek and snack lover
                   based in Bratislava. Other than snacking, I always try to keep
-                  up with new technologies (and all the javascript frameworks)
+                  up with new technologies (and all the Javascript frameworks)
                   on daily basis.
                 </HeroText>
 
                 <HeroText>
                   I'm mostly skilled in VILT stack, which consists of Vue,
-                  Inertia.js, Laravel and Tailwind but ocasionally I use React
+                  Inertia.js, Laravel and Tailwind but occasionally I use React
                   as well.
                 </HeroText>
 
