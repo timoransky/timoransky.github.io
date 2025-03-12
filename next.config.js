@@ -4,4 +4,13 @@ module.exports = {
   images: {
     domains: ["holopin.me", "holopin.io"],
   },
+  redirects: async () => {
+    return [
+      {
+        source: "/",
+        destination: "https://janci.dev",
+        permanent: true,
+      },
+    ];
+  },
 };
