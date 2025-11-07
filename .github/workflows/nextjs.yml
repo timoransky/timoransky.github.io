@@ -82,10 +82,11 @@ jobs:
           echo "Listing ./out directory:"
           ls -laR ./out
       - name: Debug - Query Actions API for artifacts
+        continue-on-error: true
         run: |
           echo "Querying artifacts for run ${{ github.run_id }}:"
           gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts \
-            --jq '.artifacts[] | {name: .name, id: .id, size_in_bytes: .size_in_bytes}'
+            --jq '.artifacts[] | {name: .name, id: .id, size_in_bytes: .size_in_bytes}' || echo "Unable to query artifacts (this is expected if artifact hasn't been uploaded yet)"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
