@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://janci.dev">
+    <meta http-equiv="refresh" content="2;url=https://janci.dev">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <style>
@@ -27,7 +27,10 @@
         }
     </style>
     <script>
-        window.location.href = "https://janci.dev";
+        // Delay redirect for accessibility (allow screen readers to announce content)
+        setTimeout(function() {
+            window.location.href = "https://janci.dev";
+        }, 2000);
     </script>
 </head>
 <body>

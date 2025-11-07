@@ -3,3 +3,6 @@
 
 # Editor
 *.pem
+
+# Build output
+_site/
